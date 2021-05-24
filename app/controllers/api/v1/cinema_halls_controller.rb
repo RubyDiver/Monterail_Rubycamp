@@ -14,7 +14,7 @@ class Api::V1::CinemaHallsController < ApplicationController
 
   #POST   /api/v1/cinema_hall
   def create
-    @cinema_hall = todo_lists.build(cinema_hall_params)
+    @cinema_hall = CinemaHall.create(cinema_hall_params)
 
     respond_to do |format|
       if @cinema_hall.save
