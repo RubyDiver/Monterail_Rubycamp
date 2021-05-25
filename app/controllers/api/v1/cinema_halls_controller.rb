@@ -18,10 +18,8 @@ class Api::V1::CinemaHallsController < ApplicationController
 
     respond_to do |format|
       if @cinema_hall.save
-        format.html {redirect_to @cinema_hall, notice: "Successfully created new cinema hall"}
         format.json {render :show, status: :created, location: @cinema_hall}
       else
-        format.html {render :new}
         format.json {render json: @cinema_hall.errors, status: :unprocessable_entity}
       end
     end

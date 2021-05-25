@@ -15,7 +15,8 @@ gem 'puma', '~> 5.0'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'sentry-ruby', '~> 4.4', '>= 4.4.2'
+gem 'sentry-rails', '~> 4.4'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
