@@ -1,3 +1,4 @@
+
 module CinemaHalls
   module UseCases
     class Index

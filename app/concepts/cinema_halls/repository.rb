@@ -3,6 +3,7 @@ module CinemaHalls
     attr_reader :adapter
 
     def initialize(adapter: CinemaHall)
+
       @adapter = adapter
     end
 

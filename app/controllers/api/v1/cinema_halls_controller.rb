@@ -11,8 +11,14 @@ class Api::V1::CinemaHallsController < ApplicationController
     render json: CinemaHalls::Representers::OneCinemaHall.new(@cinema_hall).basic
   end
 
+  def show
+    CinemaHalls::UseCases::Show.new.call(id: params[:id])
+
+  end
+
   #POST   /api/v1/cinema_hall
   def create
+
     @cinema_hall = CinemaHalls::UseCases::Create.new.call(params: cinema_hall_params)
 
     if @cinema_hall.valid?
@@ -34,6 +40,7 @@ class Api::V1::CinemaHallsController < ApplicationController
 
   #DELETE /api/v1/cinema_hall/:id
   def destroy
+
     CinemaHalls::UseCases::Destroy.new.call(id: params[:id])
   end
 
