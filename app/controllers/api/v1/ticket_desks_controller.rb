@@ -10,9 +10,10 @@ class Api::V1::TicketDesksController < ApplicationController
   end
 
   def create
-    @ticket_desk = TicketDesk.new(ticket_desk_params)
-    if @ticket_desk.save
-      render json: @ticket_desk, status: :created
+    @ticket_desk = TicketDesk::UseCases::Create.new.call(params: ticket_desk_params)
+
+    if @ticket_desk.valid?
+      render json: @ticket_desk, status: :created, location: @ticket_desk
     else
       render json: @ticket_desk.errors, status: :unprocessable_entity
     end
