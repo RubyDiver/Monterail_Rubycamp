@@ -2,11 +2,14 @@ class Api::V1::TicketDesksController < ApplicationController
 
   def index
     @ticket_desks = TicketDesks::UseCases::Index.new.call
-    render json: @ticket_desks
+
+    render json: TicketDesks::Representers::AllTicketDesks.new(@ticket_desks).basic
   end
 
   def show
-    render json: @ticket_desk
+    @ticket_desk = TicketDesks::UseCases::Show.new.call(id: params[:id])
+
+    render json: TicketDesks::Representers::OneTicketDesk.new(@ticket_desk).basic
   end
 
   def create

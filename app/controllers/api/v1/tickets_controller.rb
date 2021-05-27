@@ -39,6 +39,6 @@ class Api::V1::TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.require(:ticket).permit(:type, :price, :seat)
+    params.require(:ticket).permit(:sort, :price, :seat)
   end
 end
