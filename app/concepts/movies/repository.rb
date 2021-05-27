@@ -1,8 +1,9 @@
-module TicketDesks
+module Movies
   class Repository
     attr_reader :adapter
 
-    def initialize(adapter: TicketDesk)
+    def initialize(adapter: Movie)
+
       @adapter = adapter
     end
 
@@ -27,3 +28,4 @@ module TicketDesks
     end
   end
 end
+

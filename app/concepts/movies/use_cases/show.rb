@@ -1,9 +1,9 @@
-module CinemaHalls
+module Movies
   module UseCases
-    class Find
+    class Show
       attr_reader :repository
 
-      def initialize(repository: CinemaHalls::Repository.new)
+      def initialize(repository: Movies::Repository.new)
         @repository = repository
       end
 

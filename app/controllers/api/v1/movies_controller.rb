@@ -1,21 +1,23 @@
 class Api::V1::MoviesController < ApplicationController
-  before_action :set_movie, only: [:destroy, :update, :show]
 
   #GET api/v1/movies
   def index
-    @movies = Movie.all
+    @movies = Movies::UseCases::Index.new.call
 
-    render json: @movies
+    render json: Movies::Representers::AllMovies.new(@movies).basic
   end
 
   def show
-    render json: @movie
+    @movie = Movies::UseCases::Show.new.call(id: params[:id])
+
+    render json: Movies::Representers::OneMovie.new(@movie).basic
   end
 
   # POST  /api/v1/movies
   def create
-    @movie = Movie.new(movie_params)
-    if @movie.save
+    @movie = Movies::UseCases::Create.new.call(params: params)
+
+    if @movie.valid?
       render json: @movie, status: :created
     else
       render json: @movie.errors, status: :unprocessable_entity
@@ -25,7 +27,9 @@ class Api::V1::MoviesController < ApplicationController
 
   # PUT  /api/v1/movies/:id
   def update
-    if @movie.update(movie_params)
+    @movie = Movies::UseCases::Update.new.call(id: params[:id], params: params)
+
+    if @movie.valid?
       render json: @movie
     else
       render json: @movie.errors, status: :unprocessable_entity
@@ -34,13 +38,10 @@ class Api::V1::MoviesController < ApplicationController
 
   # DELETE  /api/v1/movies/:id
   def destroy
-    @movie.destroy
+    Movies::UseCases::Destroy.new.call(id: params[:id])
   end
 
   private
-  def set_movie
-    @movie = Movie.find(params[:id])
-  end
 
   def movie_params
     params.require(:movie).permit(:name, :genre)

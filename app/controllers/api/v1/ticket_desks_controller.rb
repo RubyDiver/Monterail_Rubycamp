@@ -1,7 +1,7 @@
 class Api::V1::TicketDesksController < ApplicationController
-  before_action :set_ticket_desk, only: [:destroy, :update, :show]
+
   def index
-    @ticket_desks = TicketDesk.all
+    @ticket_desks = TicketDesks::UseCases::Index.new.call
     render json: @ticket_desks
   end
 
@@ -10,7 +10,7 @@ class Api::V1::TicketDesksController < ApplicationController
   end
 
   def create
-    @ticket_desk = TicketDesk::UseCases::Create.new.call(params: ticket_desk_params)
+    @ticket_desk = TicketDesks::UseCases::Create.new.call(params: ticket_desk_params)
 
     if @ticket_desk.valid?
       render json: @ticket_desk, status: :created, location: @ticket_desk
@@ -21,7 +21,9 @@ class Api::V1::TicketDesksController < ApplicationController
   end
 
   def update
-    if @ticket_desk.update(ticket_desk_params)
+    @ticket_desk = TicketDesks::UseCases::Update.new.call(id: params[:id], params: params)
+
+    if @ticket_desk.valid?
       render json: @ticket_desk
     else
       render json: @ticket_desk.errors, status: :unprocessable_entity
@@ -29,13 +31,10 @@ class Api::V1::TicketDesksController < ApplicationController
   end
 
   def destroy
-    @ticket_desk.destroy
+    TicketDesks::UseCases::Destroy.new.call(id: params[:id])
   end
 
   private
-  def set_ticket_desk
-    @ticket_desk = TicketDesk.find(params[:id])
-  end
 
   def ticket_desk_params
     params.require(:ticket_desk).permit(:name, :online)
