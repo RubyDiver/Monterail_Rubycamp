@@ -70,6 +70,8 @@ GEM
     erubi (1.10.0)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
+    faker (2.18.0)
+      i18n (>= 1.6, < 2)
     faraday (1.4.2)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -197,6 +199,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   factory_bot
+  faker (~> 2.18)
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
