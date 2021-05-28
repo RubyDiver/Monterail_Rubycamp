@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2021_05_27_114912) do
     t.integer "volume"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "tickets_id_id"
+    t.index ["tickets_id_id"], name: "index_cinema_halls_on_tickets_id_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -56,6 +58,8 @@ ActiveRecord::Schema.define(version: 2021_05_27_114912) do
     t.boolean "online"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "tickets_id_id"
+    t.index ["tickets_id_id"], name: "index_ticket_desks_on_tickets_id_id"
   end
 
   create_table "tickets", force: :cascade do |t|
