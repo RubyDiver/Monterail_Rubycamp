@@ -1,4 +1,4 @@
-class Api1::V1::ReservationsController < ApplicationController
+class Api::V1::ReservationsController < ApplicationController
   before_action :set_reservation, only: [:destroy, :update, :show]
 
   def index

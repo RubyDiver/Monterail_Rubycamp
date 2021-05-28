@@ -1,19 +1,21 @@
 class Api::V1::TicketsController < ApplicationController
-  before_action :set_ticket, only: [:destroy, :update, :show]
-
   def index
-    @tickets = Ticket.all
-    render json: @tickets
+    @tickets = Tickets::UseCases::Index.new.call
+
+    render json: Tickets::Representers::AllTickets.new(@tickets).basic
   end
 
   def show
-    render json: @ticket
+    @ticket = Tickets::UseCases::Show.new.call(id: params[:id])
+
+    render json: Tickets::Representers::OneTicket.new(@ticket).build
   end
 
   def create
     @reservation = Reservation.find(params[:reservation_id])
-    @ticket = @reservation.tickets.create(ticket_params)
-    if @ticket.save
+    @ticket = Reservation::Tickets::UseCases::Create.new.call(params: params)
+
+    if @ticket.valid?
       render json: @ticket, status: :created
     else
       render json: @ticket.errors, status: :unprocessable_entity
@@ -21,7 +23,9 @@ class Api::V1::TicketsController < ApplicationController
   end
 
   def update
-    if @ticket.update(ticket_params)
+    @ticket = Tickets::UseCases::Update.new.call(id: params[:id], params: params)
+
+    if @ticket.valid?
       render json: @ticket
     else
       render json: @ticket.errors, status: :unprocessable_entity
@@ -29,15 +33,12 @@ class Api::V1::TicketsController < ApplicationController
   end
 
   def destroy
-    @ticket.destroy
+    Tickets::UseCases::Destroy.new.call(id: params[:id])
   end
 
   private
-  def set_ticket
-    @ticket = Ticket.find(params[:id])
-  end
 
   def ticket_params
-    params.require(:ticket).permit(:type, :price, :seat)
+    params.require(:ticket).permit(:sort, :price, :seat)
   end
 end
