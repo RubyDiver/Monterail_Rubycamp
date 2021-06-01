@@ -15,4 +15,4 @@ RSpec.describe "Tickets requests" do
       expect(response.status).to eq(200)
     end
   end
-end
+  end
