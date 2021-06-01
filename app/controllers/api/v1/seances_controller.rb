@@ -13,7 +13,7 @@ class Api::V1::SeancesController < ApplicationController
   def create
     @cinema_hall = CinemaHall.find(params[:cinema_hall_id])
     @movie = Movie.find(params[:movie_id])
-    @seance = @cinema_hall.seanse.create(seance_params)
+    @seance = @cinema_hall.seances.create(seance_params)
     @seance.movie_id = @movie.id
 
     if @seance.save

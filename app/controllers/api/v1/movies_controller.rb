@@ -15,7 +15,7 @@ class Api::V1::MoviesController < ApplicationController
 
   # POST  /api/v1/movies
   def create
-    @movie = Movies::UseCases::Create.new.call(params: params)
+    @movie = Movies::UseCases::Create.new.call(params: movie_params)
 
     if @movie.valid?
       render json: @movie, status: :created
@@ -27,7 +27,7 @@ class Api::V1::MoviesController < ApplicationController
 
   # PUT  /api/v1/movies/:id
   def update
-    @movie = Movies::UseCases::Update.new.call(id: params[:id], params: params)
+    @movie = Movies::UseCases::Update.new.call(id: params[:id], params: movie_params)
 
     if @movie.valid?
       render json: @movie

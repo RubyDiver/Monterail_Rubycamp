@@ -1,6 +1,6 @@
 module CinemaHalls
   module UseCases
-    class Destroy
+    class Delete
       attr_reader :repository
 
       def initialize(repository: CinemaHalls::Repository.new)

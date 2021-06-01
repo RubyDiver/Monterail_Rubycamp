@@ -11,10 +11,9 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def create
+    @ticket_desk = TicketDesk.find(params[:ticket_desk_id])
     @seance = Seance.find(params[:seance_id])
-    @reservation = @seance.reservations.create(reservation_params)
-    @reservation.ticket_desk_id = params[:ticket_desk_id]
-    @reservation = (@seance.date.to_time - 0.5.hours).to_datetime
+    @reservation = @ticket_desk.seance.reservation.create(reservation_params)
 
     if @reservation.save
       render json: @reservation, status: :created

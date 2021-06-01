@@ -16,7 +16,7 @@ class Api::V1::TicketDesksController < ApplicationController
     @ticket_desk = TicketDesks::UseCases::Create.new.call(params: ticket_desk_params)
 
     if @ticket_desk.valid?
-      render json: @ticket_desk, status: :created, location: @ticket_desk
+      render json: @ticket_desk, status: :created
     else
       render json: @ticket_desk.errors, status: :unprocessable_entity
     end
@@ -24,7 +24,7 @@ class Api::V1::TicketDesksController < ApplicationController
   end
 
   def update
-    @ticket_desk = TicketDesks::UseCases::Update.new.call(id: params[:id], params: params)
+    @ticket_desk = TicketDesks::UseCases::Update.new.call(id: params[:id], params: ticket_desk_params)
 
     if @ticket_desk.valid?
       render json: @ticket_desk
