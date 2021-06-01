@@ -35,9 +35,9 @@ RSpec.describe "TicketDesks requests" do
 
   describe "DELETE /api/v1/ticket_desks/:id" do
     let!(:ticket_desk) { TicketDesk.create(name: "Some name", online: false ) }
-    it "works and return status 200" do
+    it "works and return status 204" do
       delete("/api/v1/ticket_desks/#{ticket_desk.id}", params: { id: ticket_desk.id })
-      expect(response.status).to eq(200)
+      expect(response.status).to eq(204)
     end
   end
 end

@@ -9,10 +9,4 @@ RSpec.describe "Tickets requests" do
   @reservation = Reservation.create(status: true, seance_id: @seance.id, ticket_desk_id: @ticket_desk.id)
   @ticket = Ticket.create(sort: "normal", price: 23, seat:23, reservation_id: @reservation.id)
 
-  describe "GET /tickets" do
-    it "returns status 200" do
-      get("/api/v1/ticket_desks/#{@ticket_desk.id}/seances/#{@seance.id}/reservations/#{@reservation.id}/tickets")
-      expect(response.status).to eq(200)
-    end
-  end
   end

@@ -35,9 +35,9 @@ RSpec.describe "Movies requests" do
 
   describe "DELETE /api/v1/movies/:id" do
     let!(:movie) { Movie.create(name: "Some name", genre: "horror") }
-    it "works and return status 200" do
+    it "works and return status 204" do
       delete("/api/v1/movies/#{movie.id}", params: { id: movie.id })
-      expect(response.status).to eq(200)
+      expect(response.status).to eq(204)
     end
   end
 end

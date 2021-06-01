@@ -35,9 +35,9 @@ RSpec.describe "CinemaHalls requests" do
 
   describe "DELETE /api/v1/cinema_halls/:id" do
     let!(:cinema_hall) { CinemaHall.create(hall_name: "Some name", volume: 500) }
-    it "works and return status 200" do
+    it "works and return status 204" do
       delete("/api/v1/cinema_halls/#{cinema_hall.id}", params: { id: cinema_hall.id })
-      expect(response.status).to eq(200)
+      expect(response.status).to eq(204)
     end
   end
 end
