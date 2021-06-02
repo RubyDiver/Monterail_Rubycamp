@@ -12,12 +12,10 @@ class Api::V1::SeancesController < ApplicationController
 
   def create
     @cinema_hall = CinemaHall.find(params[:cinema_hall_id])
-    @movie = Movie.find(params[:movie_id])
     @seance = @cinema_hall.seances.create(seance_params)
-
     @seance = Seances::UseCases::Create.new.call(params: seance_params)
 
-    if @seance.save
+    if @seance.valid?
       render json: @seance, status: :created
     else
       render json: @seance.errors, status: :unprocessable_entity
