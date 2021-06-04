@@ -11,13 +11,7 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def create
-    @ticket_desk = TicketDesks::Repository.new.find(params[:ticket_desk_id])
-    #@user = Users::Repository.new.find(params[:user_id])
-    #@seance = Seances::Repository.new.find(params[:seance_id])
-
-    @reservation = Reservations::UseCases::Create.new.call(params: reservation_params.merge(user_id: params[:user_id]))
-    @reservation = Reservations::UseCases::Create.new.call(params: reservation_params.merge(seance_id: params[:seance_id]))
-    @reservation = Reservations::UseCases::Create.new.call(params: reservation_params.merge(ticket_desk_id: params[:ticket_desk_id]))
+    @reservation = Reservations::UseCases::Create.new.call(params: create_params)
 
     if @reservation.valid?
       render json: @reservation, status: :created
@@ -28,9 +22,9 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def update
-    @reservation = Reservations::UseCases::Update.new.call(id: params[:id], params: reservation_params)
+    @reservation = Reservations::UseCases::Update.new.call(id: params[:id], params: update_params)
 
-    if @reservation.update(reservation_params)
+    if @reservation.valid?
       render json: @reservation
     else
       render json: @reservation.errors, status: :unprocessable_entity
@@ -43,7 +37,11 @@ class Api::V1::ReservationsController < ApplicationController
 
   private
 
-  def reservation_params
+  def create_params
+    params.require(:reservation).permit(:status, :seance_id, :ticket_desk_id, :user_id)
+  end
+
+  def update_params
     params.require(:reservation).permit(:status)
   end
 end

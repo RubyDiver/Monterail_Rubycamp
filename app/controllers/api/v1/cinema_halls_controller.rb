@@ -2,7 +2,7 @@ class Api::V1::CinemaHallsController < ApplicationController
 
   #GET    /api/v1/cinema_halls
   def index
-    @cinema_halls = CinemaHalls::UseCases::Index.new.call
+    @cinema_halls = CinemaHalls::Repository.new.find_all
     render json: CinemaHalls::Representers::AllCinemaHalls.new(@cinema_halls).basic
   end
 

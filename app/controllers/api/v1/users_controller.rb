@@ -2,12 +2,12 @@ class Api::V1::UsersController < ApplicationController
 
   #GET    /api/v1/cinema_halls
   def index
-    @users = Users::UseCases::Index.new.call
+    @users = Users::Repository.new.find_all
     render json: Users::Representers::AllUsers.new(@users).basic
   end
 
   def show
-    @user= Users::UseCases::Show.new.call(id: params[:id])
+    @user= Users::Repository.new.find(params[:id])
     render json: Users::Representers::OneUser.new(@user).basic
   end
 

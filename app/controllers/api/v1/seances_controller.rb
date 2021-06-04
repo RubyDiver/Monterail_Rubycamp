@@ -1,7 +1,7 @@
 class Api::V1::SeancesController < ApplicationController
 
   def index
-    @seances = Seances::UseCases::Index.new.call
+    @seances = Seances::Repository.new.find_all
     render json: Seances::Representers::AllSeances.new(@seances).basic
   end
 
@@ -11,12 +11,7 @@ class Api::V1::SeancesController < ApplicationController
   end
 
   def create
-    @cinema_hall = CinemaHalls::UseCases::Show.new.call(id: params[:cinema_hall_id])
-    #@movie = Movies::UseCases::Show.new.call(id: params[:movie_id])
-
-    @seance = Seances::UseCases::Create.new.call(params: seance_params.merge(cinema_hall_id: params[:cinema_hall_id]))
-    @seance = Seances::UseCases::Create.new.call(params: seance_params.merge(movie_id: params[:movie_id]))
-
+    @seance = Seances::UseCases::Create.new.call(params: create_params)
 
     if @seance.valid?
       render json: @seance, status: :created
@@ -26,7 +21,7 @@ class Api::V1::SeancesController < ApplicationController
   end
 
   def update
-    @seance = Seances::UseCases::Update.new.call(id: params[:id],params: seance_params)
+    @seance = Seances::UseCases::Update.new.call(id: params[:id], params: update_params)
 
     if @seance.valid?
       render json: @seance
@@ -42,7 +37,11 @@ class Api::V1::SeancesController < ApplicationController
 
   private
 
-  def seance_params
+  def update_params
     params.require(:seance).permit(:start_time)
+  end
+
+  def create_params
+    params.require(:seance).permit(:start_time, :cinema_hall_id, :movie_id)
   end
 end

@@ -26,8 +26,7 @@ RSpec.describe "`Reservations` requests" do
   describe "POST /reservations" do
     it "returns status 201" do
       post("/api/v1/ticket_desks/#{ticket_desk.id}/reservations",
-           params: { reservation: { status: true, seance_id: seance.id, ticket_desk_id: ticket_desk.id } })
-      puts(response.body)
+           params: { reservation: { status: true, seance_id: seance.id, ticket_desk_id: ticket_desk.id, user_id: user.id } })
       expect(response.status).to eq(201)
     end
   end
