@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       end
 
       resources :cinema_halls do
-        resources :seances
+        resources :movies do
+          resources :seances
+        end
       end
 
       resources :ticket_desks do

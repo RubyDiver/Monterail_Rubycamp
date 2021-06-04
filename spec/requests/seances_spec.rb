@@ -8,7 +8,7 @@ RSpec.describe "Seances requests" do
 
   describe "GET seances" do
     it "returns status 200" do
-      get("/api/v1/cinema_halls/#{cinema_hall.id}/seances")
+      get("/api/v1/cinema_halls/#{cinema_hall.id}/movies/#{movie.id}/seances")
       expect(response.status).to eq(200)
     end
   end
@@ -17,30 +17,32 @@ RSpec.describe "Seances requests" do
     before {seance}
 
     it "returns status 200" do
-      get("/api/v1/cinema_halls/#{cinema_hall.id}/seances/#{seance.id}")
+      get("/api/v1/cinema_halls/#{cinema_hall.id}/movies/#{movie.id}/seances/#{seance.id}")
       expect(response.status).to eq(200)
     end
   end
 
   describe "POST /seances" do
     it "returns status 201" do
-      post("/api/v1/cinema_halls/#{cinema_hall.id}/seances",
+      post("/api/v1/cinema_halls/#{cinema_hall.id}/movies/#{movie.id}/seances",
            params: { seance: { start_time: '10:00', cinema_hall_id: cinema_hall.id, movie_id: movie.id } } )
+      puts(response.body)
       expect(response.status).to eq(201)
     end
   end
 
   describe "PUT /seances/:id" do
     it "returns status 200" do
-      put("/api/v1/cinema_halls/#{cinema_hall.id}/seances/#{seance.id}",
+      put("/api/v1/cinema_halls/#{cinema_hall.id}/movies/#{movie.id}/seances/#{seance.id}",
           params: { seance: { start_time: '12:00', cinema_hall_id: cinema_hall.id, movie_id: movie.id } } )
+
       expect(response.status).to eq(200)
     end
   end
 
   describe "DELETE /seances/:id" do
     it "returns status 204" do
-      delete("/api/v1/cinema_halls/#{cinema_hall.id}/seances/#{seance.id}")
+      delete("/api/v1/cinema_halls/#{cinema_hall.id}/movies/#{movie.id}/seances/#{seance.id}")
       expect(response.status).to eq(204)
     end
   end

@@ -12,7 +12,10 @@ class Api::V1::SeancesController < ApplicationController
 
   def create
     @cinema_hall = CinemaHalls::UseCases::Show.new.call(id: params[:cinema_hall_id])
+    #@movie = Movies::UseCases::Show.new.call(id: params[:movie_id])
+
     @seance = Seances::UseCases::Create.new.call(params: seance_params.merge(cinema_hall_id: params[:cinema_hall_id]))
+    @seance = Seances::UseCases::Create.new.call(params: seance_params.merge(movie_id: params[:movie_id]))
 
 
     if @seance.valid?
