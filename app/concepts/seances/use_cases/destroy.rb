@@ -1,9 +1,9 @@
-module CinemaHalls
+module Seances
   module UseCases
     class Destroy
       attr_reader :repository
 
-      def initialize(repository: CinemaHalls::Repository.new)
+      def initialize(repository: Repository.new)
         @repository = repository
       end
 
@@ -13,3 +13,4 @@ module CinemaHalls
     end
   end
 end
+

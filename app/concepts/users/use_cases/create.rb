@@ -1,9 +1,9 @@
-module CinemaHalls
+module Users
   module UseCases
     class Create
       attr_reader :repository
 
-      def initialize(repository: Repository.new)
+      def initialize(repository: Users::Repository.new)
         @repository = repository
       end
 

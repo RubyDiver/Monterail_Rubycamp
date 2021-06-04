@@ -8,13 +8,12 @@ module Movies
       end
 
       def basic
-        movie.map do |movie|
-          {
-            id: movie.id,
-            name: movie.name,
-            genre: movie.genre
-          }
-        end
+
+        {
+          id: movie.id,
+          name: movie.name,
+          genre: movie.genre
+        }
       end
     end
   end

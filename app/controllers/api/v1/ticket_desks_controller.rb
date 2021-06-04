@@ -1,13 +1,13 @@
 class Api::V1::TicketDesksController < ApplicationController
 
   def index
-    @ticket_desks = TicketDesks::UseCases::Index.new.call
+    @ticket_desks = TicketDesks::Repository.new.find_all
 
     render json: TicketDesks::Representers::AllTicketDesks.new(@ticket_desks).basic
   end
 
   def show
-    @ticket_desk = TicketDesks::UseCases::Show.new.call(id: params[:id])
+    @ticket_desk = TicketDesks::Repository.new.find(params[:id])
 
     render json: TicketDesks::Representers::OneTicketDesk.new(@ticket_desk).basic
   end
@@ -16,7 +16,7 @@ class Api::V1::TicketDesksController < ApplicationController
     @ticket_desk = TicketDesks::UseCases::Create.new.call(params: ticket_desk_params)
 
     if @ticket_desk.valid?
-      render json: @ticket_desk, status: :created, location: @ticket_desk
+      render json: @ticket_desk, status: :created
     else
       render json: @ticket_desk.errors, status: :unprocessable_entity
     end
@@ -24,7 +24,7 @@ class Api::V1::TicketDesksController < ApplicationController
   end
 
   def update
-    @ticket_desk = TicketDesks::UseCases::Update.new.call(id: params[:id], params: params)
+    @ticket_desk = TicketDesks::UseCases::Update.new.call(id: params[:id], params: ticket_desk_params)
 
     if @ticket_desk.valid?
       render json: @ticket_desk

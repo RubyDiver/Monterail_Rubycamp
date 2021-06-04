@@ -3,4 +3,5 @@ FactoryBot.define do
     name {Faker::Lorem.word}
     volume {rand(100..200)}
   end
+
 end

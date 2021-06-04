@@ -1,4 +1,4 @@
-module CinemaHalls
+module Reservations
   module UseCases
     class Create
       attr_reader :repository
@@ -13,4 +13,5 @@ module CinemaHalls
     end
   end
 end
+
 

@@ -1,16 +1,15 @@
 module CinemaHalls
   module UseCases
-    class Create
+    class Delete
       attr_reader :repository
 
-      def initialize(repository: Repository.new)
+      def initialize(repository: CinemaHalls::Repository.new)
         @repository = repository
       end
 
-      def call(params:)
-        repository.create(params)
+      def call(id:)
+        repository.delete(id)
       end
     end
   end
 end
-

@@ -1,19 +1,16 @@
 class Api::V1::TicketsController < ApplicationController
   def index
-    @tickets = Tickets::UseCases::Index.new.call
-
+    @tickets = Tickets::Repository.new.find_all
     render json: Tickets::Representers::AllTickets.new(@tickets).basic
   end
 
   def show
-    @ticket = Tickets::UseCases::Show.new.call(id: params[:id])
-
+    @ticket = Tickets::Repository.new.find(params[:id])
     render json: Tickets::Representers::OneTicket.new(@ticket).build
   end
 
   def create
-    @reservation = Reservation.find(params[:reservation_id])
-    @ticket = Reservation::Tickets::UseCases::Create.new.call(params: params)
+    @ticket = Tickets::UseCases::Create.new.call(params: create_params)
 
     if @ticket.valid?
       render json: @ticket, status: :created
@@ -23,7 +20,7 @@ class Api::V1::TicketsController < ApplicationController
   end
 
   def update
-    @ticket = Tickets::UseCases::Update.new.call(id: params[:id], params: params)
+    @ticket = Tickets::UseCases::Update.new.call(id: params[:id], params: update_params)
 
     if @ticket.valid?
       render json: @ticket
@@ -38,7 +35,11 @@ class Api::V1::TicketsController < ApplicationController
 
   private
 
-  def ticket_params
+  def create_params
+    params.require(:ticket).permit(:sort, :price, :seat, :reservation_id)
+  end
+
+  def update_params
     params.require(:ticket).permit(:sort, :price, :seat)
   end
 end

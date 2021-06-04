@@ -1,22 +1,19 @@
 class Api::V1::ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:destroy, :update, :show]
 
   def index
-    @reservations = Reservation.all
-    render json: @reservations
+    @reservations = Reservations::Repository.new.find_all
+    render json: Reservations::Representers::AllReservations.new(@reservations).basic
   end
 
   def show
-    render json: @reservation
+    @reservation = Reservations::Repository.new.find(params[:id])
+    render json: Reservations::Representers::OneReservation.new(@reservation).basic
   end
 
   def create
-    @seance = Seance.find(params[:seance_id])
-    @reservation = @seance.reservations.create(reservation_params)
-    @reservation.ticket_desk_id = params[:ticket_desk_id]
-    @reservation = (@seance.date.to_time - 0.5.hours).to_datetime
+    @reservation = Reservations::UseCases::Create.new.call(params: create_params)
 
-    if @reservation.save
+    if @reservation.valid?
       render json: @reservation, status: :created
     else
       render json: @reservation.errors, status: :unprocessable_entity
@@ -25,7 +22,9 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def update
-    if @reservation.update(reservation_params)
+    @reservation = Reservations::UseCases::Update.new.call(id: params[:id], params: update_params)
+
+    if @reservation.valid?
       render json: @reservation
     else
       render json: @reservation.errors, status: :unprocessable_entity
@@ -33,16 +32,16 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def destroy
-    @reservation.destroy
+    Reservations::UseCases::Destroy.new.call(id: params[:id])
   end
 
   private
 
-  def set_reservation
-    @reservation = Reservation.find(params[:id])
+  def create_params
+    params.require(:reservation).permit(:status, :seance_id, :ticket_desk_id, :user_id)
   end
 
-  def reservation_params
+  def update_params
     params.require(:reservation).permit(:status)
   end
 end

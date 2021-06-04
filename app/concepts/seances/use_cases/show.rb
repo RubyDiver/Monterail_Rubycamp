@@ -1,16 +1,15 @@
-module CinemaHalls
+module Seances
   module UseCases
-    class Create
+    class Show
       attr_reader :repository
 
       def initialize(repository: Repository.new)
         @repository = repository
       end
 
-      def call(params:)
-        repository.create(params)
+      def call(id:)
+        repository.find(id)
       end
     end
   end
 end
-
