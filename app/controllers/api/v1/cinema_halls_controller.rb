@@ -7,7 +7,7 @@ class Api::V1::CinemaHallsController < ApplicationController
   end
 
   def show
-    @cinema_hall = CinemaHalls::UseCases::Show.new.call(id: params[:id])
+    @cinema_hall = CinemaHalls::Repository.new.find(params[:id])
     render json: CinemaHalls::Representers::OneCinemaHall.new(@cinema_hall).basic
   end
 

@@ -6,14 +6,14 @@ class Api::V1::SeancesController < ApplicationController
   end
 
   def show
-    @seance = Seances::UseCases::Show.new.call(id: params[:id])
+    @seance = Seances::Repository.new.find(params[:id])
     render json: Seances::Representers::OneSeance.new(@seance).basic
   end
 
   def create
-    @cinema_hall = CinemaHall.find(params[:cinema_hall_id])
-    @seance = @cinema_hall.seances.create(seance_params)
-    @seance = Seances::UseCases::Create.new.call(params: seance_params)
+    @cinema_hall = CinemaHalls::UseCases::Show.new.call(id: params[:cinema_hall_id])
+    @seance = Seances::UseCases::Create.new.call(params: seance_params.merge(cinema_hall_id: params[:cinema_hall_id]))
+
 
     if @seance.valid?
       render json: @seance, status: :created

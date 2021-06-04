@@ -1,21 +1,25 @@
 class Api::V1::ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:destroy, :update, :show]
 
   def index
-    @reservations = Reservation.all
-    render json: @reservations
+    @reservations = Reservations::Repository.new.find_all
+    render json: Reservations::Representers::AllReservations.new(@reservations).basic
   end
 
   def show
-    render json: @reservation
+    @reservation = Reservations::Repository.new.find(params[:id])
+    render json: Reservations::Representers::OneReservation.new(@reservation).basic
   end
 
   def create
-    @ticket_desk = TicketDesk.find(params[:ticket_desk_id])
-    @seance = Seance.find(params[:seance_id])
-    @reservation = @ticket_desk.seance.reservation.create(reservation_params)
+    @ticket_desk = TicketDesks::Repository.new.find(params[:ticket_desk_id])
+    #@user = Users::Repository.new.find(params[:user_id])
+    #@seance = Seances::Repository.new.find(params[:seance_id])
 
-    if @reservation.save
+    @reservation = Reservations::UseCases::Create.new.call(params: reservation_params.merge(user_id: params[:user_id]))
+    @reservation = Reservations::UseCases::Create.new.call(params: reservation_params.merge(seance_id: params[:seance_id]))
+    @reservation = Reservations::UseCases::Create.new.call(params: reservation_params.merge(ticket_desk_id: params[:ticket_desk_id]))
+
+    if @reservation.valid?
       render json: @reservation, status: :created
     else
       render json: @reservation.errors, status: :unprocessable_entity
@@ -24,6 +28,8 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def update
+    @reservation = Reservations::UseCases::Update.new.call(id: params[:id], params: reservation_params)
+
     if @reservation.update(reservation_params)
       render json: @reservation
     else
@@ -32,14 +38,10 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def destroy
-    @reservation.destroy
+    Reservations::UseCases::Destroy.new.call(id: params[:id])
   end
 
   private
-
-  def set_reservation
-    @reservation = Reservation.find(params[:id])
-  end
 
   def reservation_params
     params.require(:reservation).permit(:status)

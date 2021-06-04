@@ -15,6 +15,12 @@ Rails.application.routes.draw do
           resources :tickets
         end
       end
+
+      resources :users do
+        resources :reservations do
+          resources :tickets
+        end
+      end
     end
   end
 end
