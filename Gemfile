@@ -23,15 +23,15 @@ gem 'actionmailer'
 gem 'faker', '~> 2.18'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
-
 group :development, :test do
   gem 'factory_bot'
+  gem 'simplecov', '~> 0.21.2'
   gem 'rspec', '~> 3.5'
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 

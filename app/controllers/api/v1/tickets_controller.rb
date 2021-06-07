@@ -13,7 +13,6 @@ class Api::V1::TicketsController < ApplicationController
     @ticket = Tickets::UseCases::Create.new.call(params: create_params)
 
     if @ticket.valid?
-      TicketMailer.with(ticket: @ticket).new_ticket_email.deliver_later
       render json: @ticket, status: :created
     else
       render json: @ticket.errors, status: :unprocessable_entity
