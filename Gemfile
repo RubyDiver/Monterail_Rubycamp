@@ -19,7 +19,7 @@ gem 'sentry-ruby', '~> 4.4', '>= 4.4.2'
 gem 'sentry-rails', '~> 4.4'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem 'actionmailer'
 gem 'faker', '~> 2.18'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

@@ -13,6 +13,7 @@ class Api::V1::TicketsController < ApplicationController
     @ticket = Tickets::UseCases::Create.new.call(params: create_params)
 
     if @ticket.valid?
+      TicketMailer.with(ticket: @ticket).new_ticket_email.deliver_later
       render json: @ticket, status: :created
     else
       render json: @ticket.errors, status: :unprocessable_entity
@@ -41,5 +42,12 @@ class Api::V1::TicketsController < ApplicationController
 
   def update_params
     params.require(:ticket).permit(:sort, :price, :seat)
+  end
+
+  def mail
+    TicketMailer.with(
+      cinema_hall_id: params[:cinema_hall_id],
+      movie_id: params[:movie_id],
+    ).mail_after_success_buy.deliver_now!
   end
 end
