@@ -36,5 +36,4 @@ RSpec.describe Ticket, type: :model do
     ticket.reservation_id = nil
     expect(ticket).not_to be_valid
   end
-
 end

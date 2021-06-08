@@ -46,7 +46,8 @@ RSpec.describe 'Tickets requests' do
 
   describe 'DELETE /api/v1/tickets/:id' do
     it 'works and return status 204' do
-      delete("/api/v1/ticket_desks/#{ticket_desk.id}/reservations/#{reservation.id}/tickets/#{ticket.id}", params: { id: ticket_desk.id })
+      delete("/api/v1/ticket_desks/#{ticket_desk.id}/reservations/#{reservation.id}/tickets/#{ticket.id}",
+             params: { id: ticket_desk.id })
       expect(response.status).to eq(204)
     end
   end

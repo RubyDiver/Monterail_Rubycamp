@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Users requests' do
-  let!(:user) { User.create(name: 'Some name', age: 500, real_user: true, email: "pawel@example.com") }
+  let!(:user) { User.create(name: 'Some name', age: 500, real_user: true, email: 'pawel@example.com') }
 
   describe 'GET /user' do
     it 'works and return status 200' do
@@ -21,7 +21,8 @@ RSpec.describe 'Users requests' do
 
   describe 'POST /api/v1/users' do
     it 'works and return status 201' do
-      post('/api/v1/users', params: { user: { name: 'Some name', age: 500, real_user: true, email: "pawel@example.com" } })
+      post('/api/v1/users',
+           params: { user: { name: 'Some name', age: 500, real_user: true, email: 'pawel@example.com' } })
       expect(response.status).to eq(201)
     end
   end
@@ -41,4 +42,3 @@ RSpec.describe 'Users requests' do
     end
   end
 end
-
