@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Movies
   module Representers
     class OneMovie
@@ -8,7 +10,6 @@ module Movies
       end
 
       def basic
-
         {
           id: movie.id,
           name: movie.name,

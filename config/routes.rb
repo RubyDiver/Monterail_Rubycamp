@@ -1,14 +1,14 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-
       resources :movies do
         resources :seances
       end
 
       resources :cinema_halls do
         resources :seances
-
       end
 
       resources :ticket_desks do

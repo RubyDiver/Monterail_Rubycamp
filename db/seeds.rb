@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -20,30 +22,9 @@ require 'faker'
   )
 end
 
-(1..1).each do |id|
-  CinemaHall.create!(
-      hall_name: Faker::FunnyName.two_word_name,
-      volume: Faker::Number.number(digits: 3 )
-  )
-end
-
-(1..4).each do |id|
+(1..1).each do |_id|
   CinemaHall.create!(
     hall_name: Faker::FunnyName.two_word_name,
     volume: Faker::Number.number(digits: 3)
-  )
-end
-
-(1..4).each do |id|
-  CinemaHall.create!(
-    hall_name: Faker::FunnyName.three_word_name,
-    volume: Faker::Number.number(digits: 2)
-  )
-end
-
-(1..1).each do |id|
-  CinemaHall.create!(
-    hall_name: Faker::FunnyName.three_word_name,
-    volume: Faker::Number.number(digits: 2)
   )
 end

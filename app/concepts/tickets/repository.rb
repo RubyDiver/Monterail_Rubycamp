@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 module Tickets
   class Repository
     attr_reader :adapter
 
     def initialize(adapter: Ticket)
-
       @adapter = adapter
     end
 
@@ -28,4 +29,3 @@ module Tickets
     end
   end
 end
-

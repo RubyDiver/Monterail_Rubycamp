@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe CinemaHall, type: :model do
-
   before(:each) do
-    @cinema_hall = CinemaHall.create(hall_name: "first", volume: 200)
+    @cinema_hall = CinemaHall.create(hall_name: 'first', volume: 200)
   end
 
   it 'create cinema hall with valid and correct info' do

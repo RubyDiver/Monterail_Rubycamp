@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TicketDesks
   module Representers
     class OneTicketDesk
@@ -17,4 +19,3 @@ module TicketDesks
     end
   end
 end
-

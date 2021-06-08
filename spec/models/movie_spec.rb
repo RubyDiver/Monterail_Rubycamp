@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Movie, type: :model do
-
-  let!(:movie) {Movie.create(name: "Star Wars", genre: "horror")}
+  let!(:movie) { Movie.create(name: 'Star Wars', genre: 'horror') }
 
   it 'create movie with valid and correct info' do
     expect(movie).to be_valid

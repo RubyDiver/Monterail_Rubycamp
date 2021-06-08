@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Users
   module Representers
     class AllUsers
@@ -21,4 +23,3 @@ module Users
     end
   end
 end
-

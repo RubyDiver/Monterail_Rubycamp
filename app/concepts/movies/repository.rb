@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 module Movies
   class Repository
     attr_reader :adapter
 
     def initialize(adapter: Movie)
-
       @adapter = adapter
     end
 
@@ -28,4 +29,3 @@ module Movies
     end
   end
 end
-

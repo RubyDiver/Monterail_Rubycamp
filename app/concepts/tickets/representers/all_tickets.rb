@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module Tickets
   module Representers
     class AllTickets
       attr_reader :tickets
 
       def initialize(tickets)
-        @tickets= tickets
+        @tickets = tickets
       end
 
       def basic

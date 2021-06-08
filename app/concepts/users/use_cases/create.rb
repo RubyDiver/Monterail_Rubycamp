@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Users
   module UseCases
     class Create
@@ -13,4 +15,3 @@ module Users
     end
   end
 end
-

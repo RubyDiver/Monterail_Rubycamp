@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -15,31 +17,37 @@ gem 'puma', '~> 5.0'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'sentry-ruby', '~> 4.4', '>= 4.4.2'
 gem 'sentry-rails', '~> 4.4'
+gem 'sentry-ruby', '~> 4.4', '>= 4.4.2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'actionmailer'
 gem 'faker', '~> 2.18'
+gem 'rubocop', '~> 1.16'
+gem 'rubocop-rails', '~> 2.10', '>= 2.10.1'
+gem 'rubocop-rspec', '~> 2.3'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
+
 group :development, :test do
   gem 'factory_bot'
-  gem 'simplecov', '~> 0.21.2'
   gem 'rspec', '~> 3.5'
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
+  gem 'simplecov', '~> 0.21.2'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'bullet', '~> 6.1', '>= 6.1.4'
 end
 
 group :development do
+  gem 'brakeman'
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

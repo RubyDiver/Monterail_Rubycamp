@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Seances
   module UseCases
     class Update
@@ -13,4 +15,3 @@ module Seances
     end
   end
 end
-

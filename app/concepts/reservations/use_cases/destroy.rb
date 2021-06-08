@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Reservations
   module UseCases
     class Destroy
@@ -13,4 +15,3 @@ module Reservations
     end
   end
 end
-

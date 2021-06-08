@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddFieldsToTickets < ActiveRecord::Migration[6.1]
   def change
     add_column :tickets, :type, :string

@@ -1,19 +1,20 @@
+# frozen_string_literal: true
+
 module Reservations
   module Representers
     class OneReservation
       attr_reader :reservation
 
       def initialize(reservation)
-        @reservation= reservation
+        @reservation = reservation
       end
 
       def basic
         {
           id: reservation.id,
-          status: reservation.status,
+          status: reservation.status
         }
       end
     end
   end
 end
-
