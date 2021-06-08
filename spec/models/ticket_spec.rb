@@ -27,5 +27,14 @@ RSpec.describe Ticket, type: :model do
     expect(ticket).not_to be_valid
   end
 
+  it 'create ticket not valid without seat' do
+    ticket.seat = nil
+    expect(ticket).not_to be_valid
+  end
+
+  it 'create ticket not valid without reservation id' do
+    ticket.reservation_id = nil
+    expect(ticket).not_to be_valid
+  end
 
 end

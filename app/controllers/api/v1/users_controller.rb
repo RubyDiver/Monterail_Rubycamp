@@ -38,7 +38,7 @@ module Api
 
       # DELETE /api/v1/cinema_hall/:id
       def destroy
-        Users::UseCases::Delete.new.call(id: params[:id])
+        Users::UseCases::Destroy.new.call(id: params[:id])
       end
 
       private

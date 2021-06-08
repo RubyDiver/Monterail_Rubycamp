@@ -12,7 +12,7 @@ module Users
       def basic
         {
           id: user.id,
-          name: users.name,
+          name: user.name,
           age: user.age,
           email: user.email,
           real_user: user.real_user
