@@ -1,13 +1,13 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/mailers/ticket_buyed_mailer.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/mailers/ticket_buyed_mailer.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/mailers/application_mailer.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/mailers/application_mailer.rb": {
         "lines": [
           1,
           1,
@@ -15,7 +15,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/models/cinema_hall.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/models/cinema_hall.rb": {
         "lines": [
           1,
           1,
@@ -24,56 +24,14 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/models/application_record.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/models/movie.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/models/reservation.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/models/seance.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/models/ticket_desk.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/models/ticket.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/models/movie.rb": {
         "lines": [
           1,
           null,
@@ -83,7 +41,30 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/models/user.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/models/reservation.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/models/seance.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/models/ticket_desk.rb": {
         "lines": [
           1,
           1,
@@ -92,7 +73,26 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/controllers/api/v1/cinema_halls_controller.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/models/ticket.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/controllers/api/v1/cinema_halls_controller.rb": {
         "lines": [
           1,
           null,
@@ -143,13 +143,13 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/controllers/application_controller.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/cinema_halls/repository.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/repository.rb": {
         "lines": [
           1,
           1,
@@ -183,7 +183,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/cinema_halls/representers/all_cinema_halls.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/representers/all_cinema_halls.rb": {
         "lines": [
           1,
           1,
@@ -208,7 +208,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/cinema_halls/representers/one_cinema_hall.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/representers/one_cinema_hall.rb": {
         "lines": [
           1,
           1,
@@ -231,7 +231,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/cinema_halls/use_cases/create.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/use_cases/create.rb": {
         "lines": [
           1,
           1,
@@ -251,7 +251,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/cinema_halls/use_cases/update.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/use_cases/update.rb": {
         "lines": [
           1,
           1,
@@ -271,7 +271,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/cinema_halls/use_cases/delete.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/use_cases/delete.rb": {
         "lines": [
           1,
           1,
@@ -290,7 +290,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/controllers/api/v1/movies_controller.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/controllers/api/v1/movies_controller.rb": {
         "lines": [
           1,
           null,
@@ -343,7 +343,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/movies/repository.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/movies/repository.rb": {
         "lines": [
           1,
           1,
@@ -378,7 +378,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/movies/representers/all_movies.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/movies/representers/all_movies.rb": {
         "lines": [
           1,
           1,
@@ -403,7 +403,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/movies/representers/one_movie.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/movies/representers/one_movie.rb": {
         "lines": [
           1,
           1,
@@ -427,7 +427,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/movies/use_cases/create.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/movies/use_cases/create.rb": {
         "lines": [
           1,
           1,
@@ -446,7 +446,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/movies/use_cases/update.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/movies/use_cases/update.rb": {
         "lines": [
           1,
           1,
@@ -466,7 +466,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/movies/use_cases/destroy.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/movies/use_cases/destroy.rb": {
         "lines": [
           1,
           1,
@@ -485,7 +485,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/controllers/api/v1/reservations_controller.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/controllers/api/v1/reservations_controller.rb": {
         "lines": [
           1,
           null,
@@ -536,7 +536,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/reservations/repository.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/reservations/repository.rb": {
         "lines": [
           1,
           1,
@@ -569,7 +569,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/reservations/representers/all_reservations.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/reservations/representers/all_reservations.rb": {
         "lines": [
           1,
           1,
@@ -595,7 +595,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/reservations/representers/one_reservation.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/reservations/representers/one_reservation.rb": {
         "lines": [
           1,
           1,
@@ -618,7 +618,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/reservations/use_cases/create.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/reservations/use_cases/create.rb": {
         "lines": [
           1,
           1,
@@ -639,7 +639,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/reservations/use_cases/update.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/reservations/use_cases/update.rb": {
         "lines": [
           1,
           1,
@@ -660,7 +660,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/reservations/use_cases/destroy.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/reservations/use_cases/destroy.rb": {
         "lines": [
           1,
           1,
@@ -680,7 +680,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/controllers/api/v1/seances_controller.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/controllers/api/v1/seances_controller.rb": {
         "lines": [
           1,
           null,
@@ -731,7 +731,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/seances/repository.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/seances/repository.rb": {
         "lines": [
           1,
           1,
@@ -764,7 +764,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/seances/representers/all_seances.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/seances/representers/all_seances.rb": {
         "lines": [
           1,
           1,
@@ -789,7 +789,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/seances/representers/one_seance.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/seances/representers/one_seance.rb": {
         "lines": [
           1,
           1,
@@ -811,7 +811,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/seances/use_cases/create.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/seances/use_cases/create.rb": {
         "lines": [
           1,
           1,
@@ -831,7 +831,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/seances/use_cases/update.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/seances/use_cases/update.rb": {
         "lines": [
           1,
           1,
@@ -851,7 +851,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/seances/use_cases/destroy.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/seances/use_cases/destroy.rb": {
         "lines": [
           1,
           1,
@@ -871,7 +871,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/controllers/api/v1/ticket_desks_controller.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/controllers/api/v1/ticket_desks_controller.rb": {
         "lines": [
           1,
           null,
@@ -920,7 +920,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/ticket_desks/repository.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/ticket_desks/repository.rb": {
         "lines": [
           1,
           1,
@@ -953,7 +953,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/ticket_desks/representers/all_ticket_desks.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/ticket_desks/representers/all_ticket_desks.rb": {
         "lines": [
           1,
           1,
@@ -978,7 +978,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/ticket_desks/representers/one_ticket_desk.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/ticket_desks/representers/one_ticket_desk.rb": {
         "lines": [
           1,
           1,
@@ -1002,7 +1002,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/ticket_desks/use_cases/create.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/ticket_desks/use_cases/create.rb": {
         "lines": [
           1,
           1,
@@ -1021,7 +1021,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/ticket_desks/use_cases/update.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/ticket_desks/use_cases/update.rb": {
         "lines": [
           1,
           1,
@@ -1040,7 +1040,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/ticket_desks/use_cases/destroy.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/ticket_desks/use_cases/destroy.rb": {
         "lines": [
           1,
           1,
@@ -1059,7 +1059,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/controllers/api/v1/tickets_controller.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/controllers/api/v1/tickets_controller.rb": {
         "lines": [
           1,
           1,
@@ -1115,7 +1115,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/tickets/repository.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/tickets/repository.rb": {
         "lines": [
           1,
           1,
@@ -1150,7 +1150,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/tickets/representers/all_tickets.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/tickets/representers/all_tickets.rb": {
         "lines": [
           1,
           1,
@@ -1176,7 +1176,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/tickets/use_cases/create.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/tickets/use_cases/create.rb": {
         "lines": [
           1,
           1,
@@ -1195,7 +1195,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/tickets/use_cases/update.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/tickets/use_cases/update.rb": {
         "lines": [
           1,
           1,
@@ -1214,7 +1214,7 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/channels/application_cable/channel.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -1224,7 +1224,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/channels/application_cable/connection.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -1234,52 +1234,9 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/cinema_halls/use_cases/index.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/use_cases/index.rb": {
         "lines": [
           null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/cinema_halls/use_cases/show.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/movies/use_cases/index.rb": {
-        "lines": [
           0,
           0,
           0,
@@ -1299,7 +1256,29 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/movies/use_cases/show.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/use_cases/show.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/movies/use_cases/index.rb": {
         "lines": [
           0,
           0,
@@ -1320,7 +1299,28 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/reservations/use_cases/index.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/movies/use_cases/show.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/reservations/use_cases/index.rb": {
         "lines": [
           0,
           0,
@@ -1343,7 +1343,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/reservations/use_cases/show.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/reservations/use_cases/show.rb": {
         "lines": [
           0,
           0,
@@ -1365,7 +1365,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/seances/use_cases/index.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/seances/use_cases/index.rb": {
         "lines": [
           0,
           0,
@@ -1387,7 +1387,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/seances/use_cases/show.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/seances/use_cases/show.rb": {
         "lines": [
           0,
           0,
@@ -1408,7 +1408,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/ticket_desks/use_cases/index.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/ticket_desks/use_cases/index.rb": {
         "lines": [
           0,
           0,
@@ -1429,7 +1429,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/ticket_desks/use_cases/show.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/ticket_desks/use_cases/show.rb": {
         "lines": [
           0,
           0,
@@ -1450,7 +1450,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/tickets/representers/one_ticket.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/tickets/representers/one_ticket.rb": {
         "lines": [
           0,
           0,
@@ -1478,7 +1478,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/tickets/use_cases/destroy.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/tickets/use_cases/destroy.rb": {
         "lines": [
           0,
           0,
@@ -1499,7 +1499,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/tickets/use_cases/index.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/tickets/use_cases/index.rb": {
         "lines": [
           0,
           0,
@@ -1520,7 +1520,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/tickets/use_cases/show.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/tickets/use_cases/show.rb": {
         "lines": [
           0,
           0,
@@ -1541,7 +1541,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/users/repository.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/users/repository.rb": {
         "lines": [
           0,
           0,
@@ -1576,7 +1576,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/users/representers/all_users.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/users/representers/all_users.rb": {
         "lines": [
           0,
           0,
@@ -1606,7 +1606,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/users/representers/one_user.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/users/representers/one_user.rb": {
         "lines": [
           0,
           0,
@@ -1635,7 +1635,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/users/use_cases/create.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/users/use_cases/create.rb": {
         "lines": [
           0,
           0,
@@ -1657,7 +1657,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/users/use_cases/destroy.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/users/use_cases/destroy.rb": {
         "lines": [
           0,
           0,
@@ -1679,7 +1679,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/users/use_cases/index.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/users/use_cases/index.rb": {
         "lines": [
           0,
           0,
@@ -1701,7 +1701,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/users/use_cases/show.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/users/use_cases/show.rb": {
         "lines": [
           0,
           0,
@@ -1722,7 +1722,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/concepts/users/use_cases/update.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/users/use_cases/update.rb": {
         "lines": [
           0,
           0,
@@ -1744,7 +1744,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/controllers/api/v1/users_controller.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/controllers/api/v1/users_controller.rb": {
         "lines": [
           0,
           null,
@@ -1798,7 +1798,7 @@
         "branches": {
         }
       },
-      "/Users/paweltatarynowicz/RubymineProjects/MonteCinema/app/jobs/application_job.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/jobs/application_job.rb": {
         "lines": [
           0,
           null,
@@ -1812,6 +1812,6 @@
         }
       }
     },
-    "timestamp": 1623068150
+    "timestamp": 1623139058
   }
 }

@@ -11,7 +11,6 @@ class Api::V1::TicketsController < ApplicationController
 
   def create
     @ticket = Tickets::UseCases::Create.new.call(params: create_params)
-
     if @ticket.valid?
       render json: @ticket, status: :created
     else
@@ -21,7 +20,6 @@ class Api::V1::TicketsController < ApplicationController
 
   def update
     @ticket = Tickets::UseCases::Update.new.call(id: params[:id], params: update_params)
-
     if @ticket.valid?
       render json: @ticket
     else
@@ -41,12 +39,5 @@ class Api::V1::TicketsController < ApplicationController
 
   def update_params
     params.require(:ticket).permit(:sort, :price, :seat)
-  end
-
-  def mail
-    TicketMailer.with(
-      cinema_hall_id: params[:cinema_hall_id],
-      movie_id: params[:movie_id],
-    ).mail_after_success_buy.deliver_now!
   end
 end
