@@ -1,6 +1,30 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/jobs/reservation_cleanup_job.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/jobs/application_job.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/mailers/ticket_buyed_mailer.rb": {
         "lines": [
           null,
@@ -1903,23 +1927,8 @@
         ],
         "branches": {
         }
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/jobs/application_job.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1623152472
+    "timestamp": 1623232099
   }
 }

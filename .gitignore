@@ -32,4 +32,4 @@
 /config/application.yml
 
 # Ignore SimpleCov coverage
-echo "coverage" >> .gitignore
+coverage
