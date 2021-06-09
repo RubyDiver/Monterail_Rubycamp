@@ -32,6 +32,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # gem 'rack-cors'
 gem 'sidekiq', '~> 6.2', '>= 6.2.1'
 group :development, :test do
+  gem 'figaro', '~> 1.2'
   gem 'factory_bot'
   gem 'rspec', '~> 3.5'
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
