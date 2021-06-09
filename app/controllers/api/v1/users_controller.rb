@@ -19,7 +19,7 @@ module Api
         @user = Users::UseCases::Create.new.call(params: user_params)
 
         if @user.valid?
-          TicketMailer.welcome_mail(@user).deliver_later
+          WelcomeMailer.welcome_mail(@user).deliver_later
           render json: @user, status: :created
         else
           render json: @user.errors, status: :unprocessable_entity
