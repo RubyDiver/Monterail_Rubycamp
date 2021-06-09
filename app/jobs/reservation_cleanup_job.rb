@@ -3,6 +3,5 @@
 class ReservationCleanupJob < ApplicationJob
   queue_as :default
 
-  def perform(*args)
-  end
+  def perform(*args); end
 end
