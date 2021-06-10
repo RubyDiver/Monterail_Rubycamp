@@ -17,9 +17,8 @@ module Api
       # POST   /api/v1/cinema_halls
       def create
         @user = Users::UseCases::Create.new.call(params: user_params)
-
         if @user.valid?
-          WelcomeMailer.welcome_mail(@user).deliver_later
+          WelcomeMailer.welcome_mail(@user).deliver_now
           render json: @user, status: :created
         else
           render json: @user.errors, status: :unprocessable_entity
