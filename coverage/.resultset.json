@@ -1,6 +1,202 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/repository.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          14,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          3,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          3,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/representers/all_cinema_halls.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          3,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/representers/one_cinema_hall.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/use_cases/create.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          4,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/use_cases/delete.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/use_cases/index.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/use_cases/show.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/use_cases/update.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          3,
+          null,
+          null,
+          1,
+          3,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/jobs/reservation_cleanup_job.rb": {
         "lines": [
           null,
@@ -9,7 +205,6 @@
           1,
           null,
           1,
-          null,
           null
         ]
       },
@@ -26,13 +221,14 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/mailers/ticket_mailer.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/mailers/welcome_mailer.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -198,156 +394,6 @@
           null,
           null,
           1,
-          null
-        ]
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/repository.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          5,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/representers/all_cinema_halls.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/representers/one_cinema_hall.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/use_cases/create.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/use_cases/update.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/use_cases/delete.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
           null
         ]
       },
@@ -1367,7 +1413,6 @@
           null,
           1,
           1,
-          null,
           1,
           1,
           1,
@@ -1573,52 +1618,6 @@
         "lines": [
           null,
           null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/use_cases/index.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/cinema_halls/use_cases/show.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
           0,
           0,
           0,
@@ -1934,6 +1933,6 @@
         }
       }
     },
-    "timestamp": 1623238249
+    "timestamp": 1623416696
   }
 }
