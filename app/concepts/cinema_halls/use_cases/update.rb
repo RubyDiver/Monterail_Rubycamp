@@ -3,7 +3,6 @@
 module CinemaHalls
   module UseCases
     class Update
-
       def initialize(repository: Repository.new)
         @repository = repository
       end
@@ -13,6 +12,7 @@ module CinemaHalls
       end
 
       private
+
       attr_reader :repository
     end
   end

@@ -12,6 +12,7 @@ module CinemaHalls
       end
 
       private
+
       attr_reader :repository
     end
   end

@@ -12,7 +12,6 @@ module Tickets
       def call(params:)
         repository.create(params)
       end
-
     end
   end
 end

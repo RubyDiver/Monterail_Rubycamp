@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Reservations
   module UseCases
     class CreateOnline
@@ -11,7 +13,6 @@ module Reservations
       def call
         Reservation.transaction do
           repository.create!(reservation_params).tap do |reservation|
-
             Tickets::UseCases::CreateWithReservation.new(
               tickets_params: params[:tickets],
               reservation: reservation,

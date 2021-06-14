@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Seances
   module UseCases
     class RenderSeat
@@ -26,4 +28,3 @@ module Seances
     end
   end
 end
-

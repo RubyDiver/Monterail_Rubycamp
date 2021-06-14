@@ -31,6 +31,5 @@ module Users
     def offline_user
       adapter.where(real_user: false).first
     end
-
   end
 end

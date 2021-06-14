@@ -3,6 +3,7 @@
 module Reservations
   class Repository
     attr_reader :adapter
+
     ReservationInvalidError = Class.new(StandardError)
 
     def initialize(adapter: Reservation)

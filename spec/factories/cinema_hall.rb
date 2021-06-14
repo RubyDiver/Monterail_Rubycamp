@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :cinema_hall do
-    hall_name { "Test cinema hall" }
+    hall_name { 'Test cinema hall' }
     volume { rand(100..200) }
   end
 end

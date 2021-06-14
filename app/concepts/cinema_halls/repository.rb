@@ -27,6 +27,7 @@ module CinemaHalls
     end
 
     private
+
     attr_reader :adapter
   end
 end
