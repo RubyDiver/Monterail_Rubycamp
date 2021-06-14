@@ -13,14 +13,24 @@ module Api
         render json: Reservations::Representers::OneReservation.new(@reservation).basic
       end
 
-      def create
-        @reservation = Reservations::UseCases::Create.new.call(params: create_params)
+      def create_offline
+        reservation = Reservations::UseCases::CreateOffline.new(params: offline_params).call
 
-        if @reservation.valid?
-          render json: @reservation, status: :created
-        else
-          render json: @reservation.errors, status: :unprocessable_entity
-        end
+        render json: Reservations::Representers::OneReservation.new(reservation).extended, status: :created
+      rescue Reservations::Repository::ReservationInvalidError => e
+        render json: { error: e.message }.to_json, status: :unprocessable_entity
+      rescue Tickets::UseCases::CreateWithReservation::SeatsNotAvailableError => e
+        render json: { error: e.message }.to_json, status: :unprocessable_entity
+      end
+
+      def create_online
+        reservation = Reservations::UseCases::CreateOnline.new(params: online_params).call
+
+        render json: Reservations::Representers::OneReservation.new(reservation).extended, status: :created
+      rescue Reservations::Repository::ReservationInvalidError => e
+        render json: { error: e.message }.to_json, status: :unprocessable_entity
+      rescue Tickets::UseCases::CreateWithReservation::SeatsNotAvailableError => e
+        render json: { error: e.message }.to_json, status: :unprocessable_entity
       end
 
       def update
@@ -39,12 +49,27 @@ module Api
 
       private
 
-      def create_params
-        params.require(:reservation).permit(:status, :seance_id, :ticket_desk_id, :user_id)
-      end
-
       def update_params
         params.require(:reservation).permit(:status)
+      end
+
+      def offline_params
+        params.require(:reservation).permit(
+          :seance_id,
+          tickets: %i[price sort seat]
+        ).merge(
+          {
+            ticket_desk_id: params[:ticket_desk_id]
+          }
+        )
+      end
+
+      def online_params
+        params.require(:reservation).permit(
+          :user_id,
+          :seance_id,
+          tickets: %i[price sort seat]
+        )
       end
     end
   end

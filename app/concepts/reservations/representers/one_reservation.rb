@@ -15,6 +15,13 @@ module Reservations
           status: reservation.status
         }
       end
+
+      def extended
+        {
+          **basic,
+          tickets: tickets
+        }
+      end
     end
   end
 end

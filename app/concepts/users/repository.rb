@@ -27,5 +27,10 @@ module Users
     def delete(id)
       adapter.destroy(id)
     end
+
+    def offline_user
+      adapter.where(real_user: false).first
+    end
+
   end
 end

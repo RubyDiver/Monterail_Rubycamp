@@ -3,6 +3,7 @@
 module Reservations
   class Repository
     attr_reader :adapter
+    ReservationInvalidError = Class.new(StandardError)
 
     def initialize(adapter: Reservation)
       @adapter = adapter
@@ -26,6 +27,12 @@ module Reservations
 
     def delete(id)
       adapter.destroy(id)
+    end
+
+    def create!(params)
+      adapter.create!(params)
+    rescue ActiveRecord::RecordInvalid
+      raise ReservationInvalidError, "Couldn't create reservation"
     end
   end
 end

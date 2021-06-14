@@ -27,5 +27,9 @@ module TicketDesks
     def delete(id)
       adapter.destroy(id)
     end
+
+    def online
+      adapter.where(online: true).first
+    end
   end
 end

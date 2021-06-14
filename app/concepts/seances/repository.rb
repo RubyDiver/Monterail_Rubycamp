@@ -27,5 +27,19 @@ module Seances
     def delete(id)
       adapter.destroy(id)
     end
+
+    def available_seats(seance)
+      all_seats = seance.cinema_hall.seats.flatten
+      taken_seats = taken_seats(seance)
+
+      all_seats - taken_seats
+    end
+
+    def taken_seats(seance)
+      sold_seats = seance.reservations.flat_map(&:tickets).map(&:seat)
+      not_available = seance.cinema_hall.not_available
+
+      sold_seats + not_available
+    end
   end
 end

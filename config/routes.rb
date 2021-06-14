@@ -7,23 +7,23 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :movies do
-        resources :seances
+      resources :movies, only: %i[index show] do
+        resources :seances, only: %i[index]
       end
 
-      resources :cinema_halls do
-        resources :seances
-      end
+      resources :ticket_desks, only: %i[show] do
+        resources :reservations, only: %i[index show create destroy] do
+          collection do
+            post '/online', to: 'reservations#create_online'
+            post '/offline', to: 'reservations#create_offline'
+          end
 
-      resources :ticket_desks do
-        resources :reservations do
-          resources :tickets
+          resources :tickets, only: %i[index show destroy]
         end
       end
-
-      resources :users do
-        resources :reservations do
-          resources :tickets
+      resources :users, only: %i[show create update destroy] do
+        resources :reservations, only: %i[index show create destroy] do
+          resources :tickets, only: %i[index show destroy]
         end
       end
     end
