@@ -2,8 +2,6 @@
 
 module CinemaHalls
   class Repository
-    attr_reader :adapter
-
     def initialize(adapter: CinemaHall)
       @adapter = adapter
     end
@@ -27,5 +25,8 @@ module CinemaHalls
     def delete(id)
       adapter.destroy(id)
     end
+
+    private
+    attr_reader :adapter
   end
 end
