@@ -38,7 +38,7 @@ module Api
       private
 
       def create_params
-        params.require(:ticket).permit(:sort, :price, :seat, :reservation_id)
+        params.require(:ticket).permit(:sort, :price, :seat, :reservation_id, :user_id)
       end
 
       def update_params
