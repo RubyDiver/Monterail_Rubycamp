@@ -28,13 +28,7 @@ RSpec.describe 'Tickets requests' do
     end
   end
 
-  describe 'POST /api/v1/tickets' do
-    it 'works and return status 201' do
-      post("/api/v1/ticket_desks/#{ticket_desk.id}/reservations/#{reservation.id}/tickets",
-           params: { ticket: { sort: 'new name', price: 24, seat: 14, reservation_id: reservation.id } })
-      expect(response.status).to eq(201)
-    end
-  end
+
 
   describe 'PUT /tickets/:id' do
     it 'works and return status 200' do

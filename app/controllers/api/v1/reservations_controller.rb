@@ -26,7 +26,7 @@ module Api
       def create_online
         reservation = Reservations::UseCases::CreateOnline.new(params: online_params).call
 
-        render json: Reservations::Representers::OneReservation.new(reservation).extended, status: :created
+        render json: Reservations::Representers::OneReservation.new(reservation).basic, status: :created
       rescue Reservations::Repository::ReservationInvalidError => e
         render json: { error: e.message }.to_json, status: :unprocessable_entity
       rescue Tickets::UseCases::CreateWithReservation::SeatsNotAvailableError => e
@@ -68,7 +68,7 @@ module Api
         params.require(:reservation).permit(
           :user_id,
           :seance_id,
-          tickets: %i[price sort seat]
+          tickets: %i[sort price seat]
         )
       end
     end

@@ -12,7 +12,8 @@ module Reservations
       def basic
         {
           id: reservation.id,
-          status: reservation.status
+          status: reservation.status,
+          tickets: tickets
         }
       end
 
