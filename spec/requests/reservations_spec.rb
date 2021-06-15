@@ -28,20 +28,14 @@ RSpec.describe '`Reservations` requests' do
 
   describe 'POST /reservations' do
     it 'returns status 201' do
-      post("/api/v1/ticket_desks/#{ticket_desk.id}/reservations",
-           params: { reservation: { status: true, seance_id: seance.id, ticket_desk_id: ticket_desk.id,
-                                    user_id: user.id } })
+      post("/api/v1/ticket_desks/#{ticket_desk.id}/reservations/online",
+           params: { reservation: { status: true, ticket_desk_id: ticket_desk.id, seance_id: seance.id,
+                                    user_id: user.id, expires_at: Time.now + 40.minutes } })
       expect(response.status).to eq(201)
     end
   end
 
-  describe 'PUT /reservations/:id' do
-    it 'returns status 200' do
-      put("/api/v1/ticket_desks/#{ticket_desk.id}/reservations/#{reservation.id}",
-          params: { reservation: { status: true, seance_id: seance.id, ticket_desk_id: ticket_desk.id } })
-      expect(response.status).to eq(200)
-    end
-  end
+
 
   describe 'DELETE /reservations/:id' do
     it 'returns status 204' do

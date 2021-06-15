@@ -5,12 +5,7 @@ require 'rails_helper'
 RSpec.describe 'Users requests' do
   let!(:user) { User.create(name: 'Some name', age: 500, real_user: true, email: 'pawel@example.com') }
 
-  describe 'GET /user' do
-    it 'works and return status 200' do
-      get('/api/v1/users')
-      expect(response.status).to eq(200)
-    end
-  end
+
 
   describe 'GET /users/:id' do
     it 'works and return status 200' do

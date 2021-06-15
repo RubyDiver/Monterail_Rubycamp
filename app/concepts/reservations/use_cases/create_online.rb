@@ -12,7 +12,7 @@ module Reservations
 
       def call
         Reservation.transaction do
-          repository.create!(reservation_params).tap do |reservation|
+          repository.create(reservation_params).tap do |reservation|
             Tickets::UseCases::CreateWithReservation.new(
               tickets_params: params[:tickets],
               reservation: reservation,
@@ -40,12 +40,12 @@ module Reservations
         TicketDesks::Repository.new.online.id
       end
 
-      def screening
-        @seance ||= Seances::Repository.new.find(params[:screening_id])
+      def seance
+        @seance ||= Seances::Repository.new.find(params[:seance_id])
       end
 
       def expires_at
-        seance.starts_time - 30.minutes
+        seance.start_time - 30.minutes
       end
     end
   end
