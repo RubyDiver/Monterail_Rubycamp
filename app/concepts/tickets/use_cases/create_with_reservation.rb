@@ -5,12 +5,12 @@ module Tickets
     class CreateWithReservation
       SeatsNotAvailableError = Class.new(StandardError)
 
-      attr_reader :reservation, :screening, :tickets_params
+      attr_reader :reservation, :seance, :tickets_params
 
       def initialize(reservation:, seance:, tickets_params: [])
-        @tickets_params = tickets_params
         @reservation = reservation
         @seance = seance
+        @tickets_params = tickets_params
       end
 
       def call
