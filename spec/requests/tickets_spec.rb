@@ -28,8 +28,6 @@ RSpec.describe 'Tickets requests' do
     end
   end
 
-
-
   describe 'PUT /tickets/:id' do
     it 'works and return status 200' do
       put("/api/v1/ticket_desks/#{ticket_desk.id}/reservations/#{reservation.id}/tickets/#{ticket.id}",
