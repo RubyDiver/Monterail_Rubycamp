@@ -16,7 +16,7 @@ module Api
       def create_offline
         reservation = Reservations::UseCases::CreateOffline.new(params: offline_params).call
 
-        render json: Reservations::Representers::OneReservation.new(reservation).extended, status: :created
+        render json: Reservations::Representers::OneReservation.new(reservation).basic, status: :created
       rescue Reservations::Repository::ReservationInvalidError => e
         render json: { error: e.message }.to_json, status: :unprocessable_entity
       rescue Tickets::UseCases::CreateWithReservation::SeatsNotAvailableError => e
@@ -56,7 +56,7 @@ module Api
       def offline_params
         params.require(:reservation).permit(
           :seance_id,
-          tickets: %i[price sort seat]
+          tickets: %i[sort price seat]
         ).merge(
           {
             ticket_desk_id: params[:ticket_desk_id]
@@ -66,9 +66,10 @@ module Api
 
       def online_params
         params.require(:reservation).permit(
-          :user_id,
+        :user_id,
           :seance_id,
-          tickets: %i[sort price seat]
+          tickets: %i[sort price seat],
+
         )
       end
     end

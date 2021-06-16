@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_14_115300) do
+ActiveRecord::Schema.define(version: 2021_06_16_081943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2021_06_14_115300) do
 
   create_table "ticket_desks", force: :cascade do |t|
     t.string "name"
-    t.boolean "online"
+    t.string "online"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "ticket_id"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 2021_06_14_115300) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.boolean "real_user"
+    t.string "real_user"
     t.text "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

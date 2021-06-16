@@ -58,19 +58,19 @@ seance_1 = Seance.create(
   cinema_hall_id: cinema_hall_1.id,
   movie_id: movie_1.id
 )
-seance_1 = Seance.create(
+seance_2 = Seance.create(
   id: 2,
   start_time: Time.current + 4.hours,
   cinema_hall_id: cinema_hall_2.id,
   movie_id: movie_2.id
 )
-seance_1 = Seance.create(
+seance_3 = Seance.create(
   id: 3,
   start_time: Time.current + 2.hours,
   cinema_hall_id: cinema_hall_3.id,
   movie_id: movie_3.id
 )
-seance_1 = Seance.create(
+seance_4 = Seance.create(
   id: 4,
   start_time: Time.current + 6.hours,
   cinema_hall_id: cinema_hall_4.id,
@@ -83,7 +83,7 @@ user_3 = User.create(id: 3, email: 'marekwojtkiewicz@gmail.com', name: 'Mare', a
 user_4 = User.create(id: 4, email: 'karojako@gmail.com', name: 'Karolina', age: 37, real_user: true)
 
 ticket_desk_1 = TicketDesk.create(id: 1, online: true, name: "Pierwsza")
-ticket_desk_2 = TicketDesk.create(id: 2, online: false, name: "Druga")
+ticket_desk_2 = TicketDesk.create(id: 2, online: true, name: "Druga")
 ticket_desk_3 = TicketDesk.create(id: 3, online: false, name: "Trzecia")
 
 Reservations::UseCases::CreateOffline.new(
@@ -133,7 +133,7 @@ Reservations::UseCases::CreateOnline.new(
       { price: 20, sort: 'student', seat: 'E3' }
     ]
   }
-).call.paid!
+).call
 
 Reservations::UseCases::CreateOnline.new(
   params: {
@@ -145,4 +145,4 @@ Reservations::UseCases::CreateOnline.new(
       { price: 15, sort: 'child', seat: 'B10' }
     ]
   }
-).call.paid!
+).call

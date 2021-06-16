@@ -13,7 +13,6 @@ module Reservations
         {
           id: reservation.id,
           status: reservation.status,
-          tickets: tickets
         }
       end
 

@@ -16,7 +16,7 @@ module Tickets
       def call
         Ticket.transaction do
 
-          raise SeatsNotAvailableError, "Can't create reservation without tickets" if tickets_params.empty?
+          #raise SeatsNotAvailableError, "Can't create reservation without tickets" if tickets_params.empty?
           raise SeatsNotAvailableError, 'Every seats are taken' if available_seats.empty?
           raise SeatsNotAvailableError, 'Provided seat are not available' unless available?
 
