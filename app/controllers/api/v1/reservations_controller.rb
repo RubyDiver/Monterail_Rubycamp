@@ -21,6 +21,12 @@ module Api
         render json: { error: e.message }.to_json, status: :unprocessable_entity
       rescue Tickets::UseCases::CreateWithReservation::SeatsNotAvailableError => e
         render json: { error: e.message }.to_json, status: :unprocessable_entity
+        ReservationConfirmMailer.with(
+          email: params[:password],
+          cinema_hall_id: params[:cinema_hall_id],
+          movie_id: params[:movie_id],
+          seat: params[:seat]
+        ).confirm_after_reservation.delier_now
       end
 
       def create_online
@@ -31,6 +37,12 @@ module Api
         render json: { error: e.message }.to_json, status: :unprocessable_entity
       rescue Tickets::UseCases::CreateWithReservation::SeatsNotAvailableError => e
         render json: { error: e.message }.to_json, status: :unprocessable_entity
+        ReservationConfirmMailer.with(
+          email: params[:password],
+          cinema_hall_id: params[:cinema_hall_id],
+          movie_id: params[:movie_id],
+          seat: params[:seat]
+        ).confirm_after_reservation.delier_now!
       end
 
       def update
