@@ -20,6 +20,7 @@ module Api
       rescue Reservations::Repository::ReservationInvalidError => e
         render json: { error: e.message }.to_json, status: :unprocessable_entity
       rescue Tickets::UseCases::CreateWithReservation::SeatsNotAvailableError => e
+
         user = Users::Repository.new.find(params[:user_id])
         ReservationConfirmMailer.with(
           email: user.email,
@@ -32,11 +33,11 @@ module Api
 
       def create_online
         reservation = Reservations::UseCases::CreateOnline.new(params: online_params).call
-
         render json: Reservations::Representers::OneReservation.new(reservation).basic, status: :created
       rescue Reservations::Repository::ReservationInvalidError => e
         render json: { error: e.message }.to_json, status: :unprocessable_entity
       rescue Tickets::UseCases::CreateWithReservation::SeatsNotAvailableError => e
+
         user = Users::Repository.new.find(params[:reservation][:user_id])
         ReservationConfirmMailer.with(
           email: user.email,

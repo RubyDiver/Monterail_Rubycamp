@@ -30,7 +30,11 @@ RSpec.describe '`Reservations` requests' do
     it 'returns status 201' do
       post("/api/v1/ticket_desks/#{ticket_desk.id}/reservations/online",
            params: { reservation: { status: "true", seance_id: seance.id, ticket_desk_id: ticket_desk.id,
-                                    user_id: user.id, expires_at: (Time.now + 40.minutes) } })
+                                    user_id: user.id, expires_at: (Time.now + 40.minutes),
+                     tickets: [{
+                        "price": 15,
+                        "sort": 0,
+                        "seat": "A8" }]}})
 
       expect(response.status).to eq(201)
     end
