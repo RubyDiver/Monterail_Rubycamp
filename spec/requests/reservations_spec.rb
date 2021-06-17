@@ -34,7 +34,8 @@ RSpec.describe '`Reservations` requests' do
                      tickets: [{
                         "price": 15,
                         "sort": 0,
-                        "seat": "A8" }]}})
+                        "seat": "A8" }]
+           }})
 
       expect(response.status).to eq(201)
     end

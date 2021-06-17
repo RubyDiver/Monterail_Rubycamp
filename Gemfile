@@ -33,6 +33,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'sidekiq', '~> 6.2', '>= 6.2.1'
 
 group :development, :test do
+  gem 'devise', '~> 4.2'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'figaro', '~> 1.2'
   gem 'rspec', '~> 3.5'

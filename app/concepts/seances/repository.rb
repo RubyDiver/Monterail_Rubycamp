@@ -36,7 +36,7 @@ module Seances
     end
 
     def taken_seats(seance)
-      sold_seats = seance.reservations.flat_map(&:tickets).map(&:seat)
+      sold_seats = seance.reservations.includes(:tickets).flat_map(&:tickets).map(&:seat)
       not_available = seance.cinema_hall.not_available
 
       sold_seats + not_available
