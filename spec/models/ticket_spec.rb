@@ -11,7 +11,7 @@ RSpec.describe Ticket, type: :model do
   let!(:reservation) do
     Reservation.create!(status: true, seance_id: seance.id, ticket_desk_id: ticket_desk.id, user_id: user.id)
   end
-  let!(:ticket) { Ticket.create!(sort: 'Some name', price: 24, seat: 14, reservation_id: reservation.id) }
+  let!(:ticket) { Ticket.create!(sort: 0, price: 24, seat: "A2", reservation_id: reservation.id) }
 
   it 'create ticket with valid and correct info' do
     expect(ticket).to be_valid

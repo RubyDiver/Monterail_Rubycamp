@@ -10,14 +10,13 @@ module Tickets
       end
 
       def basic
-        ticket.map do |ticket|
-          {
-            id: ticket.id,
-            price: ticket.price,
-            seat: ticket.seat,
-            type: ticket.sort
-          }
-        end
+        {
+          id: ticket.id,
+          price: ticket.price,
+          seat: ticket.seat,
+          type: ticket.sort
+        }
+
       end
     end
   end

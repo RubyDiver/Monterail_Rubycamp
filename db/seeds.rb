@@ -133,7 +133,7 @@ Reservations::UseCases::CreateOnline.new(
       { price: 20, sort: 'student', seat: 'E3' }
     ]
   }
-).call
+).call.status == "paid"
 
 Reservations::UseCases::CreateOnline.new(
   params: {
@@ -145,4 +145,4 @@ Reservations::UseCases::CreateOnline.new(
       { price: 15, sort: 'child', seat: 'B10' }
     ]
   }
-).call
+).call.status == "paid"

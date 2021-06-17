@@ -12,7 +12,7 @@ RSpec.describe 'Tickets requests' do
   let!(:reservation) do
     Reservation.create!(status: true, seance_id: seance.id, ticket_desk_id: ticket_desk.id, user_id: user.id)
   end
-  let!(:ticket) { Ticket.create!(sort: 'Some name', price: 24, seat: 14, reservation_id: reservation.id) }
+  let!(:ticket) { Ticket.create!(sort: 'normal', price: 24, seat: 14, reservation_id: reservation.id) }
 
   describe 'GET /tickets' do
     it 'works and return status 200' do
@@ -31,7 +31,7 @@ RSpec.describe 'Tickets requests' do
   describe 'PUT /tickets/:id' do
     it 'works and return status 200' do
       put("/api/v1/ticket_desks/#{ticket_desk.id}/reservations/#{reservation.id}/tickets/#{ticket.id}",
-          params: { ticket: { sort: 'normal', price: 24, seat: 14 } })
+          params: { ticket: { sort: "normal", price: 24, seat: 14 } })
       expect(response.status).to eq(200)
     end
   end

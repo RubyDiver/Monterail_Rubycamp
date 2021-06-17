@@ -10,7 +10,7 @@ module Api
 
       def show
         @ticket = Tickets::Repository.new.find(params[:id])
-        render json: Tickets::Representers::OneTicket.new(@ticket).build
+        render json: Tickets::Representers::OneTicket.new(@ticket).basic
       end
 
       def create

@@ -27,5 +27,9 @@ module Tickets
     def delete(id)
       adapter.destroy(id)
     end
+
+    def create!(params)
+      adapter.create!(params)
+    end
   end
 end

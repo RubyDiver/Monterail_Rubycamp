@@ -5,7 +5,7 @@ module Reservations
     class CreateOnline
       attr_reader :repository, :params
 
-      def initialize(params:, repository: Reservations::Repository.new)
+      def initialize(params:, repository: Repository.new)
         @repository = repository
         @params = params
       end

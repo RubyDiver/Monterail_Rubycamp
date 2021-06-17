@@ -235,14 +235,21 @@
           null
         ]
       },
-      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/mailers/welcome_mailer.rb": {
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/mailers/reservation_confirm_mailer.rb": {
         "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
-          1,
-          1,
-          1,
-          1,
+          2,
+          null,
           null,
           null
         ]
@@ -254,6 +261,18 @@
           1,
           1,
           1,
+          null
+        ]
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/mailers/welcome_mailer.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -643,6 +662,13 @@
           0,
           null,
           0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
           null,
           null,
           1,
@@ -653,6 +679,13 @@
           0,
           null,
           1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
           null,
           null,
           1,
@@ -688,7 +721,6 @@
           null,
           1,
           1,
-          null,
           null,
           null,
           null,
@@ -951,7 +983,6 @@
           1,
           1,
           1,
-          null,
           1,
           null,
           1,
@@ -962,7 +993,6 @@
           null,
           1,
           1,
-          null,
           null,
           1,
           0,
@@ -990,6 +1020,45 @@
           1,
           0,
           null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/users/repository.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          6,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
           null,
           null,
           null
@@ -1458,6 +1527,10 @@
           1,
           null,
           null,
+          1,
+          0,
+          null,
+          null,
           null
         ]
       },
@@ -1582,45 +1655,6 @@
           1,
           2,
           null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/paweltatarynowicz/RubymineProjects/Monterail_Rubycamp/app/concepts/users/repository.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          5,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
           null,
           null,
           null
@@ -2126,8 +2160,7 @@
           0,
           0,
           0,
-          0,
-          0,
+          null,
           0,
           0,
           0,
@@ -2229,6 +2262,6 @@
         }
       }
     },
-    "timestamp": 1623843863
+    "timestamp": 1623932120
   }
 }
