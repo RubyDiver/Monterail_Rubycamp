@@ -4,10 +4,9 @@ module Tickets
   module UseCases
     class CreateWithReservation
       SeatsNotAvailableError = Class.new(StandardError)
-
       attr_reader :reservation, :seance, :tickets_params
 
-      def initialize(reservation:, seance:, tickets_params: [])
+      def initialize(reservation:, seance:, tickets_params:)
         @reservation = reservation
         @seance = seance
         @tickets_params = tickets_params
@@ -15,8 +14,7 @@ module Tickets
 
       def call
         Ticket.transaction do
-
-          #raise SeatsNotAvailableError, "Can't create reservation without tickets" if tickets_params.empty?
+          raise SeatsNotAvailableError, "Can't create reservation without tickets" if tickets_params.empty?
           raise SeatsNotAvailableError, 'Every seats are taken' if available_seats.empty?
           raise SeatsNotAvailableError, 'Provided seat are not available' unless available?
 
