@@ -20,13 +20,13 @@ module Api
       rescue Reservations::Repository::ReservationInvalidError => e
         render json: { error: e.message }.to_json, status: :unprocessable_entity
       rescue Tickets::UseCases::CreateWithReservation::SeatsNotAvailableError => e
-        render json: { error: e.message }.to_json, status: :unprocessable_entity
         ReservationConfirmMailer.with(
-          email: params[:password],
+          email: params[:email],
           cinema_hall_id: params[:cinema_hall_id],
           movie_id: params[:movie_id],
           seat: params[:seat]
-        ).confirm_after_reservation.delier_now
+        ).confirm_after_reservation.deliver_now!
+        render json: { error: e.message }.to_json, status: :unprocessable_entity
       end
 
       def create_online
@@ -38,11 +38,11 @@ module Api
       rescue Tickets::UseCases::CreateWithReservation::SeatsNotAvailableError => e
         render json: { error: e.message }.to_json, status: :unprocessable_entity
         ReservationConfirmMailer.with(
-          email: params[:password],
+          email: params[:email],
           cinema_hall_id: params[:cinema_hall_id],
           movie_id: params[:movie_id],
           seat: params[:seat]
-        ).confirm_after_reservation.delier_now!
+        ).confirm_after_reservation.deliver_now!
       end
 
       def update
@@ -78,8 +78,9 @@ module Api
 
       def online_params
         params.require(:reservation).permit(
-        :user_id,
+          :user_id,
           :seance_id,
+          :user_id,
           tickets: %i[sort price seat],
 
         )
