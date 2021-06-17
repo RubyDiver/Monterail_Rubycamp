@@ -3,6 +3,6 @@ class CancelReservationsJob < ApplicationJob
 
   def perform(reservation_id)
     reservation = Reservations::Repository.new.find(reservation_id)
-    Reservations::Repository.new.delete(reservation.id) unless reservation.paid?
+    Reservations::Repository.new.delete(reservation.id) unless reservation.status == true
   end
 end
