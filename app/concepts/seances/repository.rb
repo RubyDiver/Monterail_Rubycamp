@@ -36,6 +36,7 @@ module Seances
     end
 
     def taken_seats(seance)
+      byebug
       sold_seats = seance.reservations.includes(:tickets).flat_map(&:tickets).map(&:seat)
       not_available = seance.cinema_hall.not_available
 
