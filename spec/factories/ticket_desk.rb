@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :ticket_desk do
-    name { Faker::Lorem.word }
-    online { true }
+    name { "pierwsza" }
+    online { "true" }
   end
 end
