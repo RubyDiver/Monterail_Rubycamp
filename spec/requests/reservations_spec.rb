@@ -9,7 +9,8 @@ RSpec.describe '`Reservations` requests' do
   let!(:ticket_desk) { TicketDesk.create!(name: 'pierwsza', online: true) }
   let!(:user) { User.create!(name: 'Josh', age: 19, email: 'josh@example.com', real_user: "true") }
   let!(:reservation) do
-    Reservation.create!(status: true, seance_id: seance.id, ticket_desk_id: ticket_desk.id, user_id: user.id)
+    Reservation.create!(status: 'true', seance_id: seance.id, ticket_desk_id: ticket_desk.id,
+                        user_id: user.id, expires_at: "2021/06/28 08:00:00")
   end
 
   describe 'GET /reservations' do
@@ -28,10 +29,17 @@ RSpec.describe '`Reservations` requests' do
 
   describe 'POST /reservations' do
     it 'returns status 201' do
-      post("/api/v1/ticket_desks/#{ticket_desk.id}/reservations/online",
-           params: { reservation: { status: "true", seance_id: seance.id, ticket_desk_id: ticket_desk.id,
-                                    user_id: user.id, expires_at: (Time.now + 40.minutes) } })
+      byebug
 
+      post("/api/v1/ticket_desks/#{ticket_desk.id}/reservations/online",
+           params: { reservation: { status: 'true', seance_id: seance.id,
+                                    user_id: user.id, expires_at: "2021/06/28 08:00:00",
+                                    tickets: [{
+                                                "price": 15,
+                                                "sort": 'normal',
+                                                "seat": 'A8'
+                                              }] } })
+      puts(response.body)
       expect(response.status).to eq(201)
     end
   end

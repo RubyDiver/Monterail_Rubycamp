@@ -33,9 +33,9 @@ module Tickets
           available_seats.include? seat
         end
       end
-
       def available_seats
         @available_seats ||= Seances::Repository.new.available_seats(seance)
+        #@available_seats ||= Seances::UseCases.new(available_seats).call
       end
 
       def seats
